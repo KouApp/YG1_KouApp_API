@@ -153,7 +153,8 @@
 >**Metod :** POST  
 >**Payload :**  
 >{'TCNo': '121215',  
->'Purpose': 'ygb'}  
+>'Purpose': 'ygb',  
+>'control' :'ONAYLI'}  
 ##### Return  
 >**Başarılı :** True   
 >**Başarısız :** False   
@@ -177,3 +178,9 @@
 >**Kayıt yoksa :** False   
 >**Kayıt varsa :** Dict = {"1":[liste] ,"2":[liste],...}  
 >**Hata varsa  :** exp   
+  
+   
+
+
+   >>TOKEN : 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
+
