@@ -244,11 +244,11 @@ def DBFindApplication(adminTC,adminPass,abbr,userTC):
     except:
         return "exp"
 #print(DBFindApplication("1515","1515","YG",""))
-def DBAdminUpdateApp(TCNo,purpose):
+def DBAdminUpdateApp(TCNo,purpose,cntrol):
     for i in fileList:
         database = couch[i]
         for doc in database.find({'selector': {dbTCno: TCNo,dbPurpose:purpose}}):
-            doc[dbControl] = "ONAYLI"
+            doc[dbControl] = cntrol
             database.save(doc)
             return "True"
     return "False"

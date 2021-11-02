@@ -82,7 +82,8 @@ def DatabaseGetApplication():
 def DatabaseAdminUpdatefile():
     TCNo = request.form[db.dbTCno]
     purpose = request.form[db.dbPurpose]
-    result = db.DBAdminUpdateApp(TCNo,purpose)
+    control = request.form[db.dbControl]
+    result = db.DBAdminUpdateApp(TCNo,purpose,control)
     return result
 
 @app.route('/DatabaseGetFacultyName', methods=['POST'])
