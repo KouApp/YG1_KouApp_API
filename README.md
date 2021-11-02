@@ -172,9 +172,9 @@
 >> 1. Yaz okulu : "YO"  
 >> 2. Çap Başvurusu : "CAP"  
 >> 3. Dikey geçiş Başvurusu : "DGS"   
->> 4. Yatay geçiş Başvurusu : "YG"   
->> 5. İntibak Başvurusu : "DI"  
-##### Return  
+>> 4. Yatay geçiş Başvurusu : "YG"    
+>> 5. İntibak Başvurusu : "DI"    
+##### Return    
 >**Kayıt yoksa :** False   
 >**Kayıt varsa :** Dict = {"1":[liste] ,"2":[liste],...}  
 >**Hata varsa  :** exp   
