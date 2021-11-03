@@ -1,6 +1,7 @@
 from flask import Flask,jsonify,request
 import database as db
-import pdf
+import pdf as p
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['JSON_SORT_KEYS'] = False
@@ -129,7 +130,7 @@ def YatayGecisBasvurusu():
     BasvurikinciOgr =request.form["BasvurikinciOgr"]
     BasvurPuan =request.form["BasvurPuan"]
     Tarih =request.form["Tarih"]
-    result = pdf.inYatayGecisBasvurusu(KurumYG,KurumArasıYG,MerYerPuanYG,YurtDisiYG,
+    result = p.inYatayGecisBasvurusu(KurumYG,KurumArasıYG,MerYerPuanYG,YurtDisiYG,
                             AdSoyad,TCno,DogumTarihi,Eposta,GsmTel,EvTel,TebligatAdres,KayitliUniversite,KayitliFakulte,
                             KayitliBolum,birinciOgretim,ikinciOgretim,SınıfYarıyıl,DisiplinCezası,NotOrt,OgrenciNo,
                             KayitliYil,KayitliPuan,YabancıDilPuan,BasvurFakulte,BasvurBolum,BasvurBirinciOgr,BasvurikinciOgr,BasvurPuan,Tarih)
