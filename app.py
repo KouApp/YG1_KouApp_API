@@ -1,6 +1,6 @@
 from flask import Flask,jsonify,request
 import database as db
-
+import pdf
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.config['JSON_SORT_KEYS'] = False
@@ -98,6 +98,42 @@ def DatabaseGetSectionName():
     result = db.DBgetUniversitySection(abbr)
     return result
 
+@app.route('/YatayGecisBasvurusu', methods=['POST'])
+def YatayGecisBasvurusu():
+    KurumYG=request.form["KurumYG"]
+    KurumArasıYG=request.form["KurumArasıYG"]
+    MerYerPuanYG=request.form["MerYerPuanYG"]
+    YurtDisiYG=request.form["YurtDisiYG"]
+    AdSoyad = request.form["AdSoyad"]
+    TCno = request.form["TCno"]
+    DogumTarihi = request.form["DogumTarihi"]
+    Eposta = request.form["Eposta"]
+    GsmTel = request.form["GsmTel"]
+    EvTel = request.form["EvTel"]
+    TebligatAdres = request.form["TebligatAdres"]
+    KayitliUniversite = request.form["KayitliUniversite"]
+    KayitliFakulte =request.form["KayitliFakulte"]
+    KayitliBolum = request.form["KayitliBolum"]
+    birinciOgretim =request.form["birinciOgretim"]
+    ikinciOgretim =request.form["ikinciOgretim"]
+    SınıfYarıyıl =request.form["SınıfYarıyıl"]
+    DisiplinCezası = request.form["DisiplinCezası"]
+    NotOrt =request.form["NotOrt"]
+    OgrenciNo =request.form["OgrenciNo"]
+    KayitliYil =request.form["KayitliYil"]
+    KayitliPuan =request.form["KayitliPuan"]
+    YabancıDilPuan =request.form["YabancıDilPuan"]
+    BasvurFakulte =request.form["BasvurFakulte"]
+    BasvurBolum =request.form["BasvurBolum"]
+    BasvurBirinciOgr = request.form["BasvurBirinciOgr"]
+    BasvurikinciOgr =request.form["BasvurikinciOgr"]
+    BasvurPuan =request.form["BasvurPuan"]
+    Tarih =request.form["Tarih"]
+    result = pdf.inYatayGecisBasvurusu(KurumYG,KurumArasıYG,MerYerPuanYG,YurtDisiYG,
+                            AdSoyad,TCno,DogumTarihi,Eposta,GsmTel,EvTel,TebligatAdres,KayitliUniversite,KayitliFakulte,
+                            KayitliBolum,birinciOgretim,ikinciOgretim,SınıfYarıyıl,DisiplinCezası,NotOrt,OgrenciNo,
+                            KayitliYil,KayitliPuan,YabancıDilPuan,BasvurFakulte,BasvurBolum,BasvurBirinciOgr,BasvurikinciOgr,BasvurPuan,Tarih)
+    return result
 
 if __name__ == '__main__':
     app.run()

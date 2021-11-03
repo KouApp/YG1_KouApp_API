@@ -120,7 +120,7 @@ def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                 dbPassword:password}
         database.save(doc)
         return "True"
-#print(writeDocument("4","5","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","aaaa"))
+#print(DBWriteDocument("1","1","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","aaaa"))
 def DBPasswordReset(TCNo,phoneNo,studentNo):
     a = 0
     database = couch['users']
@@ -158,7 +158,7 @@ def DBRegistryAdmin(TCNo,password):
             dbPassword:password}
     database.save(doc)
     return "True"
-#print(adminRegistry("1516","1516"))
+#print(DBRegistryAdmin("1515","1515"))
 def DBSaveFile(tcNO,Base64,typeinfo,fileName,purpose):
     res = MIMHashDict[typeinfo]
     date = datetime.datetime.now()
@@ -178,7 +178,7 @@ def DBSaveFile(tcNO,Base64,typeinfo,fileName,purpose):
         return "exp"
     else:
         return "CountLimited"
-#print(DBSaveFile("1","adawtrwa523a5fwaf","application/msword","trans","yatay"))
+#print(DBSaveFile("2","base64","application/pdf","trans","YG"))
 def DBFileinfo(tcNO):
     try:
         getinfoDict={}
