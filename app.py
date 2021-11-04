@@ -136,5 +136,59 @@ def YatayGecisBasvurusu():
                             KayitliYil,KayitliPuan,YabancıDilPuan,BasvurFakulte,BasvurBolum,BasvurBirinciOgr,BasvurikinciOgr,BasvurPuan,Tarih)
     return result
 
+#BolumBaskalik,Fakulte,Bolumu,OgrNo,AdSoyad,YazUnı,YazFakulte,BolumSınıf,GsmTel,email,Adres
+@app.route('/YazOkuluBasvurusu', methods=['POST'])
+def YazOkuluBasvurusu():
+    BolumBaskalik=request.form["Baskanlik"]
+    Fakulte=request.form["Fakulte"]
+    Bolumu=request.form["Bolum"]
+    OgrNo=request.form["OgrNo"]
+    AdSoyad = request.form["AdSoyad"]
+    YazUnı = request.form["YazUni"]
+    YazFakulte = request.form["YazFakulte"]
+    BolumSınıf = request.form["BolumSinif"]
+    GsmTel = request.form["GsmTel"]
+    email = request.form["Email"]
+    Adres = request.form["TebligatAdres"]
+    
+    result = p.inYazOkuluBasvurusu(BolumBaskalik,Fakulte,Bolumu,OgrNo,AdSoyad,YazUnı,YazFakulte,BolumSınıf,GsmTel,email,Adres)
+    return result
+#Bolum,Fakulte,yil,AdSoyad,GecisYolu,yarıyıl,OgrNo,intibakYariyil
+@app.route('/MuafiyetBasvurusu', methods=['POST'])
+def MuafiyetBasvurusu():
+    Bolum=request.form["Bolum"]
+    Fakulte=request.form["Fakulte"]
+    yil=request.form["Yil"]
+    AdSoyad=request.form["AdSoyad"]
+    GecisYolu = request.form["GecisYolu"]
+    yarıyıl = request.form["Yariyil"]
+    OgrNo = request.form["OgrNo"]
+    intibakYariyil = request.form["intibakYariyil"]
+    result = p.inMuafiyetBasvurusu(Bolum,Fakulte,yil,AdSoyad,GecisYolu,yarıyıl,OgrNo,intibakYariyil)
+    return result
+#BolumBaskalik,Fakulte,Bolumu,program,Ogretim,OgrNo,AdSoyad,Bolumune,Sınıf,GsmTel,email,Adres
+@app.route('/CapBasvurusu', methods=['POST'])
+def CapBasvurusu():
+    BolumBaskalik=request.form["BolumBaskanlik"]
+    Fakulte=request.form["Fakulte"]
+    Bolumu=request.form["Bolumu"]
+    program=request.form["Program"]
+    Ogretim = request.form["Ogretim"]
+    OgrNo = request.form["OgrNo"]
+    AdSoyad = request.form["AdSoyad"]
+    Bolumune = request.form["Bolumune"]
+    Sinif = request.form["Sinif"]
+    GsmTel = request.form["GsmTel"]
+    email = request.form["Email"]
+    Adres = request.form["Adres"]
+    result = p.inCapBasvurusu(BolumBaskalik,Fakulte,Bolumu,program,Ogretim,OgrNo,AdSoyad,Bolumune,Sinif,GsmTel,email,Adres)
+    return result
+@app.route('/DatabaseGetCap', methods=['POST'])
+def DBgetCap():
+    abbr = request.form[db.dbAbbreviation]
+    result = db.DBgetCap(abbr)
+    return result
+
+
 if __name__ == '__main__':
     app.run()

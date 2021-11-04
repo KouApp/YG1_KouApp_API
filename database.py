@@ -1,8 +1,6 @@
 import couchdb
 import datetime
-
 from couchdb.json import use
-
 
 couch = couchdb.Server("http://admin:admin@172.104.152.183:5984/")
 
@@ -13,7 +11,8 @@ admindbName = 'admins'
 UniversitydbName = 'university'
 FacultydbName ='faculty'
 SectiondbName ='section'
-##
+
+##dbcreatename
 dbTCno = "TCNo"
 dbStudentNo ="StudentNo"
 dbName = "Name"
@@ -42,7 +41,6 @@ getFileName ="fileName"
 cUnSuccess = "ONAYSIZ"
 cSuccess ="ONAYLI"
 uploadCount=4
-##
 MIMHashDict={
     "image/jpeg":"jpg",
     "application/pdf":"pdf",
@@ -94,6 +92,9 @@ def inRegistiryUniversitySection(Section,Faculty,abbr):
     database.save(doc)
     return True
 #print(inRegistiryUniversitySection("Uluslararası İlişkiler","İktisadi ve İdari Bilimler Fakültesi","IIF"))
+
+
+
 def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                     homeAddress,businessAddress,dateofbrith,universityName,
                     facultyName,sectionName,classNumber,password):
@@ -280,3 +281,11 @@ def DBgetUniversitySection(facName):
         mydict.update({a:doc[dbSectionName]})
     return mydict      
 #print(DBgetUniversitySection("IF"))
+def DBgetCap(abbr):
+    capdict ={}
+    database = couch['cap']
+    for doc in database.find({'selector': {"abbr": abbr}}):
+        capdict =doc["cap"]
+    return capdict
+
+        

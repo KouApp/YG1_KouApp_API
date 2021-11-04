@@ -12,8 +12,12 @@
    >admins  
    >doc  
    >pdf  
-   >image  
+   >jpeg    
    >xls  
+   >faculty  
+   >section  
+   >university  
+   >cap
 
 ***
 # Jenkins 
@@ -219,6 +223,113 @@
 ###### Return  
 >>{"base64":"base64base64base64base64base64"}  
 
+### Çap Başvurusu Bölümleri
+
+###### Post
+>**Adres :** http://172.104.152.183:5000/DatabaseGetCap   
+>**Metod :** POST     
+>**payload :**   
+>>payload={'Abbreviation': 'BilgMuh'}  
+
+###### Return  
+>>    {"a": "Elektronik ve Haberleşme Mühendisliği",  
+>>    "b": "Bilgisayar Mühendisliği",  
+>>    "c": "Mekatronik Mühendisliği"}  
+
+###### Abbreviation  
+> Bilgisayar Mühendisliği : BilgMuh  
+> Elektrik Mühendisliği : ElekMuh  
+> Elektronik ve Haberleşme Mühendisliği : ElohabMuh  
+> Endüstri Mühendisliği : EndMuh  
+> Mekatronik Mühendisliği : MekMuh  
+  
+> Fen bilgisi Öğretmenliği : FenOgr  
+> İngilizce Öğretmenliği : ingOgr  
+> Okul Öncesi Öğretmenliği : OkulOgr  
+> Rehberlik ve Psikolojisi Öğretmenliği : RehPsiOgr  
+> Sınıf Öğretmenliği : SinifOgr  
+  
+> Arkeoloji Bölümü : ArkeolojiBol  
+> Fizik Bölümü : FizikBol  
+> Kimya Bölümü : KimyaBol  
+> Matematik Bölümü : MatBol  
+> Tarih Bölümü : TarihBol  
+  
+> Calısma Ekonomisi : CalEko  
+> İktisat Bölümü : iktisatBol  
+> İşletme Bölümü : isletmeBol  
+> Siyaset Bölümü : SiyasetBol  
+> Uluslar arası İlişkiler : UluslarArası  
+  
+> Halkla İlişkiler : Halkla   
+> Radyo Televizyon : Radyo  
+> Görsel İletişim : Gorsel  
+> Reklamcılık : Reklam  
+> Gazetecilik : Gazete  
+
+### Çap Başvurusu
+
+###### Post
+>**Adres :** http://172.104.152.183:5000/CapBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'BolumBaskanlik': 'Baskanlik',  
+>>'Fakulte': 'Fakulte',  
+>>'Bolumu': 'Bolumu',  
+>>'Program': 'Program',  
+>>'Ogretim': 'I Ogretim',  
+>>'OgrNo': '18111115',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'Bolumune': 'Bilisim Sistemleri',  
+>>'Sinif': '3',  
+>>'GsmTel': '544554447',  
+>>'Email': 'example@gmail.com',  
+>>'Adres': 'Adres Adres'}  
+
+###### Return  
+>>**Kayıt Varsa :** Kayitli
+>>**Kayıt Yoksa :** Base64
+
+### Muafiyet Başvurusu
+
+###### Post
+>**Adres :** http://172.104.152.183:5000/MuafiyetBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'Bolum': 'Bolumu',  
+>>'Fakulte': 'Fakultesi',  
+>>'Yil': '21',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'GecisYolu': 'Yatay Gecis',  
+>>'Yariyil': '5',  
+>>'OgrNo': '18118111',  
+>>'intibakYariyil': '6'}  
+
+###### Return  
+>>**Kayıt Varsa :** Kayitli
+>>**Kayıt Yoksa :** Base64
+
+
+### Yaz Okulu Başvurusu
+###### Post
+>**Adres :** http://172.104.152.183:5000/YazOkuluBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'Baskanlik': 'Baskanlık',  
+>>'Fakulte': 'Fakulte',  
+>>'Bolum': 'Bolum',  
+>>'OgrNo': '18118181',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'YazUni': 'Yaz Universite',  
+>>'YazFakulte': 'Yaz Fakulte',  
+>>'BolumSinif': 'BolumSınıf',  
+>>'GsmTel': '545454545',  
+>>'Email': 'example@ggmailc.om',  
+>>'TebligatAdres': 'adres adress'}   
+
+###### Return  
+>>**Kayıt Varsa :** Kayitli
+>>**Kayıt Yoksa :** Base64
 
 ## Git repo
 >>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git
