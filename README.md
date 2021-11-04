@@ -14,10 +14,16 @@
    >pdf  
    >jpeg    
    >xls  
+<<<<<<< HEAD
    >faculty  
    >section  
    >university  
    >cap
+=======
+   >university  
+   >faculty  
+   >section  
+>>>>>>> ac594d44a4a64c5efef8077c26f1e3579719722e
 
 ***
 # Jenkins 
