@@ -12,8 +12,11 @@
    >admins  
    >doc  
    >pdf  
-   >image  
+   >jpeg    
    >xls  
+   >university  
+   >faculty  
+   >section  
 
 ***
 # Jenkins 
