@@ -293,8 +293,8 @@
 >>'Adres': 'Adres Adres'}  
 
 ###### Return  
->>**Kayıt Varsa :** Kayitli
->>**Kayıt Yoksa :** Base64
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64  
 
 ### Muafiyet Başvurusu
 
@@ -312,8 +312,8 @@
 >>'intibakYariyil': '6'}  
 
 ###### Return  
->>**Kayıt Varsa :** Kayitli
->>**Kayıt Yoksa :** Base64
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64
 
 
 ### Yaz Okulu Başvurusu
@@ -334,8 +334,8 @@
 >>'TebligatAdres': 'adres adress'}   
 
 ###### Return  
->>**Kayıt Varsa :** Kayitli
->>**Kayıt Yoksa :** Base64
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64  
 
 ## Git repo
 >>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git
