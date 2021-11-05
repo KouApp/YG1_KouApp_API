@@ -37,7 +37,7 @@
    >**Adres :** http://172.104.152.183:5000/DatabaseRegistry  
    >**Metod :** POST    
    >**Payload :**  
-   >1. {'StudentNo': '181202203',   
+   >1. {'StudentNo': '181202203',  
    >2. 'TCNo': '555202203',  
    >3. 'Name': 'yasin',  
    >4. 'Surname': 'şahin',  
@@ -50,7 +50,8 @@
    >11. 'DepartmanName': 'Teknoloji Fakültesi',  
    >12. 'SectionName': 'Bilişim Sistemleri Müh',  
    >13. 'Rate': '3',  
-   >14. 'Password': 'deneme123.'}  
+   >14. 'Password': 'deneme123.',  
+   >15. 'ProfilePhotoBase64':'Profilebase64Profilebase64'}  
 
 ##### Return 
 > 1. Başarısız kayıt : False      
@@ -141,7 +142,7 @@
 > **Kayıt Başarılı :** True  
 > **Kayıt Başarısız :** CountLimited  
 > **Hata varsa :** exp  
-> `Bir kullanıcı en fazla dört (4) dosya ekleyebilir.`
+`Bir kullanıcı en fazla dört (4) dosya ekleyebilir.`
 
 ## File Find Page
 

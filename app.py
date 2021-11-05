@@ -30,12 +30,13 @@ def DatabaseRegistry():
     sectionName = request.form[db.dbSectionName]
     classNumber = request.form[db.dbRate]
     password = request.form[db.dbPassword]
+    dbPhoto = request.form[db.dbPhotoBase64]
     result = db.DBWriteDocument(studentNo,
                                     tcNo,name,surname,
                                     email,phoneNo,homeAddress,
                                     businessAddress,dateofbrith,
                                     universityName,facultyName,
-                                    sectionName,classNumber,password)
+                                    sectionName,classNumber,password,dbPhoto)
 
     return result
 
@@ -185,8 +186,8 @@ def CapBasvurusu():
 
 @app.route('/DatabaseGetCap', methods=['POST'])
 def DBgetCap():
-    abbr = request.form[db.dbAbbreviation]
-    result = db.DBgetCap(abbr)
+    SecName = request.form[db.dbSectionName]
+    result = db.DBgetCap(SecName)
     return result
 
 

@@ -32,6 +32,7 @@ dbPurpose ="Purpose"
 dbAbbreviation = "Abbreviation"
 dbFaculty='Faculty'
 dbuserTCno = "UserTC"
+dbPhotoBase64 ="ProfilePhotoBase64"
 ##POST
 getType ="fileType"
 getBase64 ="Base64"
@@ -97,7 +98,7 @@ def inRegistiryUniversitySection(Section,Faculty,abbr):
 
 def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                     homeAddress,businessAddress,dateofbrith,universityName,
-                    facultyName,sectionName,classNumber,password):
+                    facultyName,sectionName,classNumber,password,photo):
     findUser = inLocalUserinfo(tcNo)
     if findUser == True:
         return "False"
@@ -118,10 +119,11 @@ def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                 dbDepartmanName:facultyName,
                 dbSectionName:sectionName,
                 dbRate:classNumber,
-                dbPassword:password}
+                dbPassword:password,
+                dbPhotoBase64:photo}
         database.save(doc)
         return "True"
-#print(DBWriteDocument("1","1","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","aaaa"))
+#print(DBWriteDocument("6","5","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","aaaa","PhotoBase64"))
 def DBPasswordReset(TCNo,phoneNo,studentNo):
     a = 0
     database = couch['users']
@@ -265,7 +267,6 @@ def DBgetUserFile(TCNo,purpose):#Onaylımı onaysız mı
 def DBgetUniversityfaculty(abbr):
     database = couch[FacultydbName]
     mydict={}
-    listem = []
     a=0
     for doc in database.find({'selector': {dbAbbreviation: abbr}}):
         a+=1
@@ -281,11 +282,12 @@ def DBgetUniversitySection(facName):
         mydict.update({a:doc[dbSectionName]})
     return mydict      
 #print(DBgetUniversitySection("IF"))
-def DBgetCap(abbr):
+def DBgetCap(SecName):
     capdict ={}
     database = couch['cap']
-    for doc in database.find({'selector': {"abbr": abbr}}):
+    for doc in database.find({'selector': {"bolum": SecName}}):
         capdict =doc["cap"]
     return capdict
 
+#print(DBgetCap("Mekatronik Mühendisliği"))
         

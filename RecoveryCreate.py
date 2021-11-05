@@ -39,8 +39,10 @@ def CreateFiles():
     db.DBSaveFile("4","Base64Base64Base64","application/pdf","belge1","DGS")
     return print("Finish")
 
+
 def CreateUniSecFac():
     db.inRegistiryUniversity("Kocaeli Universitesi","KOU")
+    db.inRegistiryUniversity("Diger","Dig")
     db.inRegistiryUniversityFaculty("Mühendislik Fakültesi","KOU","Kocaeli Universitesi")
     db.inRegistiryUniversitySection("Bilgisayar Mühendisliği","Mühendislik Fakültesi","MF")
     db.inRegistiryUniversitySection("Elektronik ve Haberleşme Mühendisliği","Mühendislik Fakültesi","MF")

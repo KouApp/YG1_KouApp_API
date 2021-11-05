@@ -300,7 +300,7 @@ def printTree(tree):
                 flag = 1
 
 
-record_len = 4
+record_len = 7
 bplustree = BplusTree(record_len)
 bplustree.insert('5', '33')
 bplustree.insert('15', '21')
