@@ -14,16 +14,14 @@
    >pdf  
    >jpeg    
    >xls  
-<<<<<<< HEAD
    >faculty  
    >section  
    >university  
    >cap
-=======
    >university  
    >faculty  
    >section  
->>>>>>> ac594d44a4a64c5efef8077c26f1e3579719722e
+
 
 ***
 # Jenkins 
@@ -33,7 +31,7 @@
    >Şifre : 979a43efd3d5498284a7bc8d4f459dc4  
    
 # CouchDB APİ
-### Registry Page
+## Registry Page
 ##### POST  
 
    >**Adres :** http://172.104.152.183:5000/DatabaseRegistry  
@@ -58,7 +56,7 @@
 > 1. Başarısız kayıt : False      
 > 2. Başarılı kayıt : True    
 
-### Login Page
+## Login Page
 ##### POST
   > **Adres :** http://172.104.152.183:5000/DatabaseLogin    
   > **Metod :** Post    
@@ -71,7 +69,7 @@
 >**User :** 'users'  
 >**Başarısız :** False  
 
-### Faculty Name  
+## Faculty Name Get Page 
 ##### Post  
   > **Adres :** http://172.104.152.183:5000/DatabaseGetFacultyName   
   > **Metod :** Post    
@@ -84,18 +82,18 @@
 >4: 'Eğitim Fakültesi',   
 >5: 'İktisadi ve İdari Bilimler Fakültesi'}  
 
-### Section Name  
-`KISALTMALAR :  
-1.İletişim Fakültesi = "IF"    
-2.Mühendislik Fakültesi = "MF"  
-3.Fen-Edebiyat Fakültesi = "FEF"  
-4.İktisadi ve İdari Bilimler Fakültesi = "IIF"  
-5.Eğitim Fakültesi = "EF"`
-##### Post  
-  > **Adres :** http://172.104.152.183:5000/DatabaseGetSectionName   
-  > **Metod :** Post    
-  > **Payload :** {'Abbreviation': 'IF'}   
+## Section Name Get Page  
 
+##### Post  
+> **Adres :** http://172.104.152.183:5000/DatabaseGetSectionName   
+> **Metod :** Post    
+> **Payload :** {'Abbreviation': 'IF'}   
+>>KISALTMALAR :   
+>>1.İletişim Fakültesi = "IF"      
+>>2.Mühendislik Fakültesi = "MF"  
+>>3.Fen-Edebiyat Fakültesi = "FEF"  
+>>4.İktisadi ve İdari Bilimler Fakültesi = "IIF"  
+>>5.Eğitim Fakültesi = "EF"`  
 ##### Return   
 >{1: 'Gazetecilik',  
 >2: 'Halkla İlişkiler ve Tanıtım',   
@@ -103,7 +101,7 @@
 >4: 'Görsel İletişim Tasarımı',   
 >5: 'Reklamcılık'}  
 
-### Reset Password Page  
+## Reset Password Page  
 ##### POST   
  >**Adres :** http://172.104.152.183:5000/DatabasePasswordReset  
  >**Metod :** Post  
@@ -116,11 +114,11 @@
 
   >**Başarılı :** True  
   >**Başarısız :** False  
-  >`NOT : Başarılıysa yeni şifre Öğrenci no olur.`  
+  >>**NOT : Başarılıysa yeni şifre Öğrenci no olur.**  
     
 
-# FİLE
-### File upload
+
+## File Upload Page 
 
 ##### POST   
 >**Adres :** http://172.104.152.183:5000/DatabaseSaveFile     
@@ -145,7 +143,7 @@
 > **Hata varsa :** exp  
 > `Bir kullanıcı en fazla dört (4) dosya ekleyebilir.`
 
-### File Find  
+## File Find Page
 
 ##### POST  
 >**Adres :** http://172.104.152.183:5000/DatabaseGetinfo     
@@ -156,8 +154,8 @@
 >**Kayıt varsa :** Dict = {1:{TCNo,Base64,Control,fileName},2:{TCNo,Base64,...}}    
 >**Hata varsa  :** exp   
 
-# APPLİCATİON
-### Admin Update  
+# Admin
+## Admin Update Page
 ##### Post   
 >**Adres :** http://172.104.152.183:5000/DatabaseAdminUpdatefile    
 >**Metod :** POST  
@@ -169,7 +167,7 @@
 >**Başarılı :** True   
 >**Başarısız :** False   
 > `True Dönerse kayıt onaylanmış olur`  
-### Get Application  
+## Get Application Page
 ##### Post   
 >**Adres :** http://172.104.152.183:5000/DatabaseGetApplication   
 >**Metod :** POST    
@@ -191,9 +189,9 @@
 
 # Başvurular
 
-### Yatay Geçiş Başvurusu
+## Yatay Geçiş Başvurusu Sayfası
 
-###### Post
+#### Post
 >**Adres :** http://172.104.152.183:5000/YatayGecisBasvurusu   
 >**Metod :** POST     
 >**payload :**   
@@ -226,23 +224,89 @@
 >>'BasvurikinciOgr': 'O',  
 >>'BasvurPuan': '380',  
 >>'Tarih': '15.12.2021'}  
-###### Return  
+##### Return  
 >>{"base64":"base64base64base64base64base64"}  
 
-### Çap Başvurusu Bölümleri
 
-###### Post
+
+## Çap Başvurusu
+
+##### Post
+>**Adres :** http://172.104.152.183:5000/CapBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'BolumBaskanlik': 'Baskanlik',  
+>>'Fakulte': 'Fakulte',  
+>>'Bolumu': 'Bolumu',  
+>>'Program': 'Program',  
+>>'Ogretim': 'I Ogretim',  
+>>'OgrNo': '18111115',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'Bolumune': 'Bilisim Sistemleri',  
+>>'Sinif': '3',  
+>>'GsmTel': '544554447',  
+>>'Email': 'example@gmail.com',  
+>>'Adres': 'Adres Adres'}  
+
+###### Return  
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64  
+
+## Muafiyet Başvurusu Sayfası
+
+##### Post
+>**Adres :** http://172.104.152.183:5000/MuafiyetBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'Bolum': 'Bolumu',  
+>>'Fakulte': 'Fakultesi',  
+>>'Yil': '21',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'GecisYolu': 'Yatay Gecis',  
+>>'Yariyil': '5',  
+>>'OgrNo': '18118111',  
+>>'intibakYariyil': '6'}  
+
+##### Return  
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64
+
+
+## Yaz Okulu Başvurusu Sayfası
+##### Post
+>**Adres :** http://172.104.152.183:5000/YazOkuluBasvurusu  
+>**Metod :** POST     
+>**payload :**   
+>>{'Baskanlik': 'Baskanlık',  
+>>'Fakulte': 'Fakulte',  
+>>'Bolum': 'Bolum',  
+>>'OgrNo': '18118181',  
+>>'AdSoyad': 'Yasin Sahin',  
+>>'YazUni': 'Yaz Universite',  
+>>'YazFakulte': 'Yaz Fakulte',  
+>>'BolumSinif': 'BolumSınıf',  
+>>'GsmTel': '545454545',  
+>>'Email': 'example@ggmailc.om',  
+>>'TebligatAdres': 'adres adress'}   
+
+##### Return  
+>**Kayıt Varsa :** Kayitli  
+>**Kayıt Yoksa :** Base64  
+
+## Çap Başvurusu Bölümleri
+
+##### Post
 >**Adres :** http://172.104.152.183:5000/DatabaseGetCap   
 >**Metod :** POST     
 >**payload :**   
 >>payload={'Abbreviation': 'BilgMuh'}  
 
-###### Return  
+##### Return  
 >>    {"a": "Elektronik ve Haberleşme Mühendisliği",  
 >>    "b": "Bilgisayar Mühendisliği",  
 >>    "c": "Mekatronik Mühendisliği"}  
 
-###### Abbreviation  
+##### Abbreviation  
 > Bilgisayar Mühendisliği : BilgMuh  
 > Elektrik Mühendisliği : ElekMuh  
 > Elektronik ve Haberleşme Mühendisliği : ElohabMuh  
@@ -272,71 +336,6 @@
 > Görsel İletişim : Gorsel  
 > Reklamcılık : Reklam  
 > Gazetecilik : Gazete  
-
-### Çap Başvurusu
-
-###### Post
->**Adres :** http://172.104.152.183:5000/CapBasvurusu  
->**Metod :** POST     
->**payload :**   
->>{'BolumBaskanlik': 'Baskanlik',  
->>'Fakulte': 'Fakulte',  
->>'Bolumu': 'Bolumu',  
->>'Program': 'Program',  
->>'Ogretim': 'I Ogretim',  
->>'OgrNo': '18111115',  
->>'AdSoyad': 'Yasin Sahin',  
->>'Bolumune': 'Bilisim Sistemleri',  
->>'Sinif': '3',  
->>'GsmTel': '544554447',  
->>'Email': 'example@gmail.com',  
->>'Adres': 'Adres Adres'}  
-
-###### Return  
->**Kayıt Varsa :** Kayitli  
->**Kayıt Yoksa :** Base64  
-
-### Muafiyet Başvurusu
-
-###### Post
->**Adres :** http://172.104.152.183:5000/MuafiyetBasvurusu  
->**Metod :** POST     
->**payload :**   
->>{'Bolum': 'Bolumu',  
->>'Fakulte': 'Fakultesi',  
->>'Yil': '21',  
->>'AdSoyad': 'Yasin Sahin',  
->>'GecisYolu': 'Yatay Gecis',  
->>'Yariyil': '5',  
->>'OgrNo': '18118111',  
->>'intibakYariyil': '6'}  
-
-###### Return  
->**Kayıt Varsa :** Kayitli  
->**Kayıt Yoksa :** Base64
-
-
-### Yaz Okulu Başvurusu
-###### Post
->**Adres :** http://172.104.152.183:5000/YazOkuluBasvurusu  
->**Metod :** POST     
->**payload :**   
->>{'Baskanlik': 'Baskanlık',  
->>'Fakulte': 'Fakulte',  
->>'Bolum': 'Bolum',  
->>'OgrNo': '18118181',  
->>'AdSoyad': 'Yasin Sahin',  
->>'YazUni': 'Yaz Universite',  
->>'YazFakulte': 'Yaz Fakulte',  
->>'BolumSinif': 'BolumSınıf',  
->>'GsmTel': '545454545',  
->>'Email': 'example@ggmailc.om',  
->>'TebligatAdres': 'adres adress'}   
-
-###### Return  
->**Kayıt Varsa :** Kayitli  
->**Kayıt Yoksa :** Base64  
-
 ## Git repo
 >>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git
 
