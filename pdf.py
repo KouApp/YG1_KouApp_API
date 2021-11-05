@@ -11,8 +11,8 @@ def inYatayKayitlimi(TCno):
         for belge in tarama:
             if belge.name.startswith(str(TCno)):
                 return True
-            else:
-                return False
+            
+    return False
 
 def inYatayGecisBasvurusu(KurumYG,KurumArasıYG,MerYerPuanYG,YurtDisiYG,
                             AdSoyad,TCno,DogumTarihi,Eposta,GsmTel,EvTel,TebligatAdres,KayitliUniversite,KayitliFakulte,
@@ -78,8 +78,8 @@ def inYazKayitlimi(OgrNo):
         for belge in tarama:
             if belge.name.startswith(str(OgrNo)):
                 return True
-            else:
-                return False
+            
+    return False
 
 def inYazOkuluBasvurusu(BolumBaskalik,Fakulte,Bolumu,OgrNo,AdSoyad,YazUnı,YazFakulte,BolumSınıf,GsmTel,email,Adres):
                 dir_list = os.getcwd()
@@ -125,8 +125,7 @@ def inMuafiyetKayitlimi(OgrNo):
         for belge in tarama:
             if belge.name.startswith(str(OgrNo)):
                 return True
-            else:
-                return False
+    return False
 
 def inMuafiyetBasvurusu(Bolum,Fakulte,yil,AdSoyad,GecisYolu,yarıyıl,OgrNo,intibakYariyil):
                 dir_list = os.getcwd()
@@ -174,8 +173,7 @@ def inCapKayitlimi(OgrNo):
         for belge in tarama:
             if belge.name.startswith(str(OgrNo)):
                 return True
-            else:
-                return False
+    return False
 
 def inCapBasvurusu(BolumBaskalik,Fakulte,Bolumu,program,Ogretim,OgrNo,AdSoyad,Bolumune,Sınıf,GsmTel,email,Adres):
                 dir_list = os.getcwd()

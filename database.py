@@ -1,6 +1,6 @@
 import couchdb
 import datetime
-from couchdb.json import use
+
 
 couch = couchdb.Server("http://admin:admin@172.104.152.183:5984/")
 

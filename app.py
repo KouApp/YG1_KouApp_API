@@ -136,7 +136,6 @@ def YatayGecisBasvurusu():
                             KayitliYil,KayitliPuan,YabancıDilPuan,BasvurFakulte,BasvurBolum,BasvurBirinciOgr,BasvurikinciOgr,BasvurPuan,Tarih)
     return result
 
-#BolumBaskalik,Fakulte,Bolumu,OgrNo,AdSoyad,YazUnı,YazFakulte,BolumSınıf,GsmTel,email,Adres
 @app.route('/YazOkuluBasvurusu', methods=['POST'])
 def YazOkuluBasvurusu():
     BolumBaskalik=request.form["Baskanlik"]
@@ -153,7 +152,7 @@ def YazOkuluBasvurusu():
     
     result = p.inYazOkuluBasvurusu(BolumBaskalik,Fakulte,Bolumu,OgrNo,AdSoyad,YazUnı,YazFakulte,BolumSınıf,GsmTel,email,Adres)
     return result
-#Bolum,Fakulte,yil,AdSoyad,GecisYolu,yarıyıl,OgrNo,intibakYariyil
+
 @app.route('/MuafiyetBasvurusu', methods=['POST'])
 def MuafiyetBasvurusu():
     Bolum=request.form["Bolum"]
@@ -166,7 +165,7 @@ def MuafiyetBasvurusu():
     intibakYariyil = request.form["intibakYariyil"]
     result = p.inMuafiyetBasvurusu(Bolum,Fakulte,yil,AdSoyad,GecisYolu,yarıyıl,OgrNo,intibakYariyil)
     return result
-#BolumBaskalik,Fakulte,Bolumu,program,Ogretim,OgrNo,AdSoyad,Bolumune,Sınıf,GsmTel,email,Adres
+
 @app.route('/CapBasvurusu', methods=['POST'])
 def CapBasvurusu():
     BolumBaskalik=request.form["BolumBaskanlik"]
@@ -183,6 +182,7 @@ def CapBasvurusu():
     Adres = request.form["Adres"]
     result = p.inCapBasvurusu(BolumBaskalik,Fakulte,Bolumu,program,Ogretim,OgrNo,AdSoyad,Bolumune,Sinif,GsmTel,email,Adres)
     return result
+
 @app.route('/DatabaseGetCap', methods=['POST'])
 def DBgetCap():
     abbr = request.form[db.dbAbbreviation]
