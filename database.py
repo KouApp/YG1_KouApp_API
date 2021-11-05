@@ -1,6 +1,6 @@
 import couchdb
 import datetime
-
+import kripto as kr
 
 couch = couchdb.Server("http://admin:admin@172.104.152.183:5984/")
 
@@ -95,6 +95,22 @@ def inRegistiryUniversitySection(Section,Faculty,abbr):
 #print(inRegistiryUniversitySection("Uluslararası İlişkiler","İktisadi ve İdari Bilimler Fakültesi","IIF"))
 
 
+def DBgetUsers(TCNo):
+    getDict={}
+    try:
+        database = couch["users"]
+        for doc in database.find({'selector': {dbTCno: TCNo}}):
+            Name =doc[dbName]
+            SurName =doc[dbSurName]
+            photobase64 =doc[dbPhotoBase64]
+            getDict={
+                dbName:Name,
+                dbSurName:SurName,
+                dbPhotoBase64:photobase64
+            }
+            return getDict
+    except:
+        return getDict
 
 def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                     homeAddress,businessAddress,dateofbrith,universityName,
@@ -103,6 +119,7 @@ def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
     if findUser == True:
         return "False"
     else:
+        hash = kr.Cryptology(password)
         date = datetime.datetime.now()
         database = couch["users"]
         doc ={  'date' :str(date),
@@ -119,11 +136,11 @@ def DBWriteDocument(studentNo,tcNo,name,surname,email,phoneNo,
                 dbDepartmanName:facultyName,
                 dbSectionName:sectionName,
                 dbRate:classNumber,
-                dbPassword:password,
+                dbPassword:hash,
                 dbPhotoBase64:photo}
         database.save(doc)
         return "True"
-#print(DBWriteDocument("6","5","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","aaaa","PhotoBase64"))
+#print(DBWriteDocument("8","8","adwad","aw3da","awda","awda","aga","faf","awdw","awaaa","agag","adadaw","23","12345","PhotoBase64"))
 def DBPasswordReset(TCNo,phoneNo,studentNo):
     a = 0
     database = couch['users']
@@ -139,20 +156,31 @@ def DBPasswordReset(TCNo,phoneNo,studentNo):
 #rint(resetPassword("5","awda","4"))
 def DBLogininfo(TCNo,passwd):
     a = 0
+    
     try:
         database = couch[userdbName]
-        for doc in database.find({'selector': {dbTCno: TCNo, dbPassword: passwd}}):
+        for doc in database.find({'selector': {dbTCno: TCNo}}):
+            Password =doc[dbPassword]
+            hash = kr.kontrol(passwd,Password)
+            if hash:
+                return userdbName
+            else:
+                return "False"
             a =1
-            return userdbName
         database1 = couch[admindbName]
-        for doc1 in database1.find({'selector': {dbTCno: TCNo, dbPassword: passwd}}):
+        for doc1 in database1.find({'selector': {dbTCno: TCNo}}):
             a=1
-            return admindbName
+            Password =doc1[dbPassword]
+            hash = kr.kontrol(passwd,Password)
+            if hash:
+                return admindbName
+            else:
+                return "False"
         if a ==0:
             return "False"
     except:
         return "exp"
-#print(usersLogin("1515","1515"))
+#print(DBLogininfo("8","12345"))
 def DBRegistryAdmin(TCNo,password):
     date = datetime.datetime.now()
     database = couch["admins"]
