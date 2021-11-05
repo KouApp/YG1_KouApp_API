@@ -300,7 +300,7 @@
 >**Adres :** http://172.104.152.183:5000/DatabaseGetCap   
 >**Metod :** POST     
 >**payload :**   
->>payload={'Abbreviation': 'BilgMuh'}  
+>>payload={'SectionName': 'Bilgisayar Mühendisliği'}  
 
 ##### Return  
 >>    {"a": "Elektronik ve Haberleşme Mühendisliği",  

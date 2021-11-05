@@ -1,22 +1,7 @@
-
-
-def sifreleme(yazi):
-    try:
-        alfabe = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x' , 'y', 'z']
-        sifre = ""
-        for i in yazi:
-                sifre = sifre + alfabe[(alfabe.index(i)+3) % len(alfabe)]
-        return sifre
-    except:
-        None
-
-def cozucu():
-    alfabe = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x' , 'y', 'z']
-    a =sifreleme("naBeR")
-    print(a)
-    cozucu = ""
-    for a in a:
-        cozucu = cozucu + alfabe[(alfabe.index(a)-3) % len(alfabe)]
-    print("Yazinin sifresi cozulmus hali : " + cozucu)
-
-cozucu()
+import hashlib
+sifre="4cef278fa51df71b9ddb8c82178a77d2"
+sifrele=hashlib.md5()
+sifrele.update(sifre.encode("utf-8"))
+cikti=sifrele.hexdigest()
+print(cikti.digest())
+print(cikti)
