@@ -62,8 +62,8 @@
   > **Adres :** http://172.104.152.183:5000/DatabaseLogin    
   > **Metod :** Post    
   > **Payload :**     
-  > 1. {'TCNo': '5555',    
-  > 2. 'Password': 'deneme123.'}  
+  > 1. {'TCNo': '8',    
+  > 2. 'Password': '12345'}  
 
 ##### Return 
 >**Admin :** 'admins'  
@@ -350,5 +350,6 @@
 > Reklamcılık : Reklam  
 > Gazetecilik : Gazete  
 ## Git repo
->>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git
-
+>>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git  
+>> Kou Mobil App : git clone https://yasinsahin0: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@github.com/yasinsahin0/kou-mobil-app.git  
+>> Kou Mobil App Organizasyon: git clone https://yasinsahin0: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@github.com/KouApp/KouMobilApp-Java-Android.git

@@ -16,3 +16,4 @@ def kontrol(deg,RegisterDatabasePass):
         return False
 
 
+#print(Cryptology("1515"))

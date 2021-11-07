@@ -31,7 +31,7 @@ def DatabaseRegistry():
     classNumber = request.form[db.dbRate]
     password = request.form[db.dbPassword]
     dbPhoto = request.form[db.dbPhotoBase64]
-    result = db.DBWriteDocument(studentNo,
+    result = db.RemoteDeff.DBWriteDocument(studentNo,
                                     tcNo,name,surname,
                                     email,phoneNo,homeAddress,
                                     businessAddress,dateofbrith,
@@ -44,19 +44,19 @@ def DatabaseRegistry():
 def DatabaseLogin():
     TCNo = request.form[db.dbTCno]
     password = request.form[db.dbPassword]
-    result = db.DBLogininfo(TCNo,password)
+    result = db.RemoteDeff.DBLogininfo(TCNo,password)
     return result
 @app.route('/DatabaseGetUsers', methods=['POST'])
 def DatabaseGetUsers():
     TCNo = request.form[db.dbTCno]
-    result = db.DBgetUsers(TCNo)
+    result = db.RemoteDeff.DBgetUsers(TCNo)
     return result
 @app.route('/DatabasePasswordReset', methods=['POST'])
 def DatabasePasswordReset():
     studentNo = request.form[db.dbStudentNo]
     tcNo = request.form[db.dbTCno]
     phoneNo = request.form[db.dbPhoneNo]
-    result = db.DBPasswordReset(tcNo,phoneNo,studentNo)
+    result = db.RemoteDeff.DBPasswordReset(tcNo,phoneNo,studentNo)
     return result
 
 @app.route('/DatabaseSaveFile', methods=['POST'])
@@ -66,13 +66,13 @@ def DatabaseSaveFile():
     getBase64 = request.form[db.getBase64]
     getFileName = request.form[db.getFileName]
     getPurpose = request.form[db.dbPurpose]
-    result = db.DBSaveFile(TCNo,getBase64,getType,getFileName,getPurpose)
+    result = db.RemoteDeff.DBSaveFile(TCNo,getBase64,getType,getFileName,getPurpose)
     return result
 
 @app.route('/DatabaseGetinfo', methods=['POST'])
 def DatabaseGetinfo():
     tcNo = request.form[db.dbTCno]
-    result = db.DBFileinfo(tcNo)
+    result = db.RemoteDeff.DBFileinfo(tcNo)
     return result
 
 @app.route('/DatabaseGetApplication', methods=['POST'])
@@ -81,7 +81,7 @@ def DatabaseGetApplication():
     passwd = request.form[db.dbPassword]
     abbr = request.form[db.dbAbbreviation]
     usertc = request.form[db.dbuserTCno]
-    DGSdict = db.DBFindApplication(tcNo,passwd,abbr,usertc)
+    DGSdict = db.RemoteDeff.DBFindApplication(tcNo,passwd,abbr,usertc)
     return DGSdict
 
 @app.route('/DatabaseAdminUpdatefile', methods=['POST'])
@@ -89,19 +89,19 @@ def DatabaseAdminUpdatefile():
     TCNo = request.form[db.dbTCno]
     purpose = request.form[db.dbPurpose]
     control = request.form[db.dbControl]
-    result = db.DBAdminUpdateApp(TCNo,purpose,control)
+    result = db.RemoteDeff.DBAdminUpdateApp(TCNo,purpose,control)
     return result
 
 @app.route('/DatabaseGetFacultyName', methods=['POST'])
 def DatabaseGetFacultyName():
     abbr = request.form[db.dbAbbreviation]
-    result = db.DBgetUniversityfaculty(abbr)
+    result = db.RemoteDeff.DBgetUniversityfaculty(abbr)
     return result
 
 @app.route('/DatabaseGetSectionName', methods=['POST'])
 def DatabaseGetSectionName():
     abbr = request.form[db.dbAbbreviation]
-    result = db.DBgetUniversitySection(abbr)
+    result = db.RemoteDeff.DBgetUniversitySection(abbr)
     return result
 
 @app.route('/YatayGecisBasvurusu', methods=['POST'])
@@ -191,7 +191,7 @@ def CapBasvurusu():
 @app.route('/DatabaseGetCap', methods=['POST'])
 def DBgetCap():
     SecName = request.form[db.dbSectionName]
-    result = db.DBgetCap(SecName)
+    result = db.RemoteDeff.DBgetCap(SecName)
     return result
 
 
