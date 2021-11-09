@@ -1,9 +1,8 @@
-# B+ tee in python
-##https://www.programiz.com/dsa/b-plus-tree
+
 
 import math
 
-# Node creation
+
 class Node:
     def __init__(self, order):
         self.order = order
@@ -34,7 +33,7 @@ class Node:
             self.keys = [[key]]
 
 
-# B plus tree
+
 class BplusTree:
     def __init__(self, order):
         self.root = Node(order)
@@ -275,7 +274,6 @@ class BplusTree:
                         j.parent = parentNode
 
 
-# Print the tree
 def printTree(tree):
     lst = [tree.root]
     level = [0]
@@ -302,16 +300,6 @@ def printTree(tree):
 
 record_len = 7
 bplustree = BplusTree(record_len)
-bplustree.insert('5', '33')
-bplustree.insert('15', '21')
-bplustree.insert('25', '31')
-bplustree.insert('10', '41')
-bplustree.insert('45', '10')
-bplustree.insert('55', '11')
-bplustree.insert('65', '12')
+
 printTree(bplustree)
 
-if(bplustree.find('5', '33')):
-    print("Found")
-else:
-    print("Not found")
