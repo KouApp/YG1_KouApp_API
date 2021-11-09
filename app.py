@@ -46,11 +46,13 @@ def DatabaseLogin():
     password = request.form[db.dbPassword]
     result = db.RemoteDeff.DBLogininfo(TCNo,password)
     return result
+
 @app.route('/DatabaseGetUsers', methods=['POST'])
 def DatabaseGetUsers():
     TCNo = request.form[db.dbTCno]
     result = db.RemoteDeff.DBgetUsers(TCNo)
     return result
+
 @app.route('/DatabasePasswordReset', methods=['POST'])
 def DatabasePasswordReset():
     studentNo = request.form[db.dbStudentNo]
