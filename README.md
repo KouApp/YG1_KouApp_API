@@ -31,106 +31,15 @@
    >Şifre : 979a43efd3d5498284a7bc8d4f459dc4  
    
 # CouchDB APİ
-## Registry Page
 
-User Registry : [Documentation](https://github.com/KouApp/KouAppAPI/tree/main/readme/userregistry.md)  
-##### POST  
+User Registry : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/userregistry.md)  
+Login : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/login.md)
+User Profile : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/userprofile.md)
+Faculty Name Get Page : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/facnamegetpage.md)
+Section Name Get Page : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/sectionnameget.md)
+Reset Password : [Documentation](https://github.com/KouApp/KouAppAPI/blob/main/doc/resetpass.md)
 
-   >**Adres :** http://172.104.152.183:5000/DatabaseRegistry  
-   >**Metod :** POST    
-   >**Payload :**  
-   >1. {'StudentNo': '181202203',  
-   >2. 'TCNo': '555202203',  
-   >3. 'Name': 'yasin',  
-   >4. 'Surname': 'şahin',  
-   >5. 'Email': 'ornek@gmail.com',  
-   >6. 'PhoneNo': '555 444 33 22',  
-   >7. 'HomeAddress': 'home adres burası',  
-   >8. 'BusinessAddress': 'bussines adress',  
-   >9. 'DateOfBrith': '18.11.2021',  
-   >10. 'UniversityName': 'Kocaeli üniversitesi',  
-   >11. 'DepartmanName': 'Teknoloji Fakültesi',  
-   >12. 'SectionName': 'Bilişim Sistemleri Müh',  
-   >13. 'Rate': '3',  
-   >14. 'Password': 'deneme123.',  
-   >15. 'ProfilePhotoBase64':'Profilebase64Profilebase64'}  
 
-##### Return 
-> 1. Başarısız kayıt : False      
-> 2. Başarılı kayıt : True    
-
-## Login Page
-##### POST
-  > **Adres :** http://172.104.152.183:5000/DatabaseLogin    
-  > **Metod :** Post    
-  > **Payload :**     
-  > 1. {'TCNo': '8',    
-  > 2. 'Password': '12345'}  
-
-##### Return 
->**Admin :** 'admins'  
->**User :** 'users'  
->**Başarısız :** False  
-
-## Users Profil Page
-##### POST
-  > **Adres :** http://172.104.152.183:5000/DatabaseGetUsers    
-  > **Metod :** Post    
-  > **Payload :**     
-  > 1. {'TCNo': '10'}   
-
-##### Return  
->{"Name": "yasin",  
->"Surname": "şahin",  
->"ProfilePhotoBase64": "prfoilbase64"}  
-
-## Faculty Name Get Page 
-##### Post  
-  > **Adres :** http://172.104.152.183:5000/DatabaseGetFacultyName   
-  > **Metod :** Post    
-  > **Payload :** {'Abbreviation': 'KOU'}   
-
-##### Return  
->{1: 'Mühendislik Fakültesi',   
->2: 'İletişim Fakültesi',   
->3: 'Fen-Edebiyat Fakültesi',  
->4: 'Eğitim Fakültesi',   
->5: 'İktisadi ve İdari Bilimler Fakültesi'}  
-
-## Section Name Get Page  
-
-##### Post  
-> **Adres :** http://172.104.152.183:5000/DatabaseGetSectionName   
-> **Metod :** Post    
-> **Payload :** {'Abbreviation': 'IF'}   
->>KISALTMALAR :   
->>1.İletişim Fakültesi = "IF"      
->>2.Mühendislik Fakültesi = "MF"  
->>3.Fen-Edebiyat Fakültesi = "FEF"  
->>4.İktisadi ve İdari Bilimler Fakültesi = "IIF"  
->>5.Eğitim Fakültesi = "EF"`  
-##### Return   
->{1: 'Gazetecilik',  
->2: 'Halkla İlişkiler ve Tanıtım',   
->3: 'Radyo Televizyon ve Sinema',   
->4: 'Görsel İletişim Tasarımı',   
->5: 'Reklamcılık'}  
-
-## Reset Password Page  
-##### POST   
- >**Adres :** http://172.104.152.183:5000/DatabasePasswordReset  
- >**Metod :** Post  
- >**payload :**
- >1. {'StudentNo': '181202201',  
- >2. 'TCNo': '555202201',   
- >3. 'PhoneNo': '55554488'}  
-			   
-#####  Return 
-
-  >**Başarılı :** True  
-  >**Başarısız :** False  
-  >>**NOT : Başarılıysa yeni şifre Öğrenci no olur.**  
-    
 
 
 ## File Upload Page 
