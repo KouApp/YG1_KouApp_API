@@ -32,6 +32,8 @@
    
 # CouchDB APİ
 ## Registry Page
+
+User Registry : [Documentation](https://github.com/KouApp/KouAppAPI/tree/main/readme/userregistry.md)  
 ##### POST  
 
    >**Adres :** http://172.104.152.183:5000/DatabaseRegistry  
