@@ -2,7 +2,7 @@ import couchdb
 import datetime
 import kripto as kr
 
-couch = couchdb.Server("http://admin:admin@172.104.152.183:5984/")
+couch = couchdb.Server("http://admin:admin@194.195.246.167:5984/")
 
 fileList =["pdf","doc","jpeg","xls"]
 
@@ -318,4 +318,3 @@ class RemoteDeff():
         return capdict
 
     #print(DBgetCap("Mekatronik Mühendisliği"))
-        
