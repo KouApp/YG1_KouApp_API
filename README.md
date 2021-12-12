@@ -2,7 +2,7 @@
 ***
 # CouchDB Database 
 
-  >http://172.104.152.183:5984/_utils  
+  >http://194.195.246.167:5984/_utils  
   >Kullanıcı adı : admin  
   >Sifre : admin  
   
@@ -96,6 +96,4 @@ Yaz Okulu Başvurusu Page : [Documentation](https://github.com/KouApp/KouAppAPI/
 > Reklamcılık : Reklam  
 > Gazetecilik : Gazete  
 ## Git repo
->>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git  
->> Kou Mobil App : git clone https://yasinsahin0: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@github.com/yasinsahin0/kou-mobil-app.git  
->> Kou Mobil App Organizasyon: git clone https://yasinsahin0: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@github.com/KouApp/KouMobilApp-Java-Android.git
+>>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git  
