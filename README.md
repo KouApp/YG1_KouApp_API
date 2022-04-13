@@ -95,5 +95,4 @@ Yaz Okulu Başvurusu Page : [Documentation](https://github.com/KouApp/KouAppAPI/
 > Görsel İletişim : Gorsel  
 > Reklamcılık : Reklam  
 > Gazetecilik : Gazete  
-## Git repo
->>TOKEN : https://yasinsahin0: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@github.com/KouApp/Couchdb_py_api.git  
+
